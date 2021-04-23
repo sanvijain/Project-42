@@ -9,6 +9,7 @@ var maxDrops = 100;
 var engine, world;
 var rand;
 var thunderCreatedFrame=0;
+var dropCreatedFrame=0;
 
 function preload(){
     thunder1 = loadImage("1.png");
@@ -32,8 +33,11 @@ function setup(){
     umbrella = new Umbrella(200,500);
 
     //create drops
+    if(frameCount % 150 === 0){
+       dropCreatedFrame=frameCount;
+    }
    for(var i=0; i<maxDrops; i++){
-       drops.push(new createDrop(random(0,400),random(0,400)));
+       drops.push(new Drops(random(0,400),random(0,400)));
    }
     
 }
