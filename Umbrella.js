@@ -3,19 +3,23 @@ class Umbrella {
         var options = {
             isStatic: true,
         }
-        this.image = loadImage("Walking Frame/walking_1.png");
+        this.image = loadImage("walking_1.png");
         this.body = Bodies.circle(x,y,50,options);
         this.radius = 50;
         World.add(world, this.body)
-        //load Image for BestMan
+        this.batmanImg = loadImage("Bestman-01.png");
         
     }
 
     display(){
-        var pos = this.umbrella.position;
+        var pos = this.body.position;
         imageMode(CENTER);
         //display the image for BestMan if the frameCount is over 200, otherwise display the boy with umbrella image
         if(frameCount>=200)
-        image(this.image,pos.x,pos.y+70,300,300);
+        image(this.batmanImg,pos.x,pos.y+80,150,230);
+        else
+       image(this.image,pos.x,pos.y+70,300,300);
     }
 }
+
+
