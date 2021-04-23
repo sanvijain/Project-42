@@ -11,12 +11,12 @@ class Drops{
 
     update(){
         if(this.body.position.y > height){
-            Matter.Body.setPosition(this.rain, {x:random(0,400),y:random(0,400)});
+            Matter.Body.setPosition(this.body, {x:random(0,400),y:random(0,400)});
         }
     }
 
     display(){
-        Stroke(0);
+        
         fill(0,0,255);
         ellipseMode(RADIUS);
         ellipse(this.body.position.x,this.body.position.y,this.radius);
